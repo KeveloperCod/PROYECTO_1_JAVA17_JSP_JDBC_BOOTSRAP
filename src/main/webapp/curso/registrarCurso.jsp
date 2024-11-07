@@ -13,6 +13,18 @@
 	        <div class="col-md-10 offset-md-3">   
 				    <form id="frmRegistroCursos" action="cursoServlet" method="post" >
 				        <h2 class="mb-4">Registro de Cursos</h2>
+						        
+								<%
+    							// Verifica si el mensaje existe en el request
+    							String mensaje = (String) request.getAttribute("mensaje");
+    							if (mensaje != null) {
+								%>
+    							<script type="text/javascript">
+        							alert('<%= mensaje %>');
+    							</script>
+								<%
+    								}
+								%>
 				        <div class="row">
 				            <div class="col-md-6">
 				              
@@ -54,11 +66,8 @@
 				                 
 				                <div class="form-group"> 
 						        	<button type="submit" name="opcion" value="reg" class="btn btn-primary">Registrar</button>
-						        </div>	
-						        
-						        	  
-						         
-									   
+						        </div>
+
 				            </div>
 				        </div>		        		        
 				    </form>
